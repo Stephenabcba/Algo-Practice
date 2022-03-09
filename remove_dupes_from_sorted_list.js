@@ -58,3 +58,24 @@ var deleteDuplicates = function (head) {
     }
     return head
 };
+
+// Alternative solutions found from leetcode discussion:
+// Method 1: Create a count object/dictionary
+//  - In the first pass through the list, create an object
+//    that keeps the count of occurances of all numbers in
+//    the list
+//  - In the second pass, only keep numbers with frequency
+//    of 1 in the object
+
+// Method 2: Similar to current solution
+//  - Keep 3 pointer variables: prev, cur, and next
+//  - in addition, create a dummy node, with a "next"
+//    attribute pointing to head
+//  - if cur and next have different values:
+//      - move all pointers right one node
+//  - else:
+//      - remove all duplicates from next
+//          -> loop next = next.next
+//          -> at the end,
+//              -> cur = next
+//              -> prev.next = cur
