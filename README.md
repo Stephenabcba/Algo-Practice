@@ -96,3 +96,15 @@
   - The order in which nodes are inserted into the tree matters
     - if nodes are inserted least to greatest or greatest to least, the tree becomes similar to SLL
       - performance on accessing and manipulating suffers as all operations become linear in time complexity
+- Binary Search
+  - has a time complexity of O(log(N)), where N is the search range
+  - typically used for a `sorted array`
+  - however, its principles can also be extended for other types of algorithm
+    - ex:
+      - sorted matrixes -> treat the entire matrix as if it's one continuous sorted array
+      - searching for a minimum that meets a requirement
+        - typically requires some sort of processing each iteration, and thus more expensive than O(log(N))
+        - finding the duplicated number in n+1 length array with [1,n] value range
+          - binary search for the SMALLEST value N where `count(x<N) > N` where x is each value in the nums array
+        - finding the minimum largest sum for splitting an array into m continuous subarrays
+          - binary search in the range of `[max(nums),sum(nums)]` for the smallest value that allows the nums array to be split into m subarrays
