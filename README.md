@@ -108,3 +108,50 @@
           - binary search for the SMALLEST value N where `count(x<N) > N` where x is each value in the nums array
         - finding the minimum largest sum for splitting an array into m continuous subarrays
           - binary search in the range of `[max(nums),sum(nums)]` for the smallest value that allows the nums array to be split into m subarrays
+- Heap
+  - Also known as priority queue
+  - a data structure highly efficient in finding the max or min of its contents (one of the two)
+    - min heap: finding the min value takes O(1) time
+    - max heap: finding the max value takes O(1) time
+  - a heap has a tree structure
+    - the parent is always smaller (or larger in a max heap) than its children
+      - unlike a BST, a heap does not promise any other order besides the root being the smallest (or largest)
+    - typically, a heap is a binary tree
+  - heaps are often implemented as an array
+    - converting a regular array to a heap takes O(N) time
+    - the heap takes O(N) space
+    - the "root" of the heap is at index 0
+      - the smallest value (or largest)
+    - the children of any given node at index k (if the node's children exist) are at index 2k+1 and 2k+2
+  - Adding an element to a heap takes O(logN) time
+    - the value is added at the end of the array
+    - the added value will "swim" to its correct position
+      - follows the heap rule of parent smaller than children
+  - Removing an element from a heap takes O(logN) time
+    - the returned value is always the smallest in the heap (the root)
+    - replace the root with the last item in the array
+    - the root will then "sink" to its correct position
+      - heap rule applies
+  - Replacing an element takes O(logN) time
+    - the returned value is always the smallest
+    - replace the root with the new value
+      - the new value will "sink" as needed
+  - In python:
+    - the heap is stored in a list, and converted using heapify
+    - common methods:
+      - heapq.heapify(list) - convert list to heap
+      - heapq.heappush(list,item) - add item
+      - heapq.heappop(list) - remove item
+      - heapq.heappushpop(list,item)
+        - push first and then pop, more efficient than separate method calls
+      - heapq.heapreplace(list,item)
+        - pop first and then push
+  - In Java:
+    - the heap has its own class called PriorityQueue
+    - common methods:
+      - PriorityQueue<Integer> heap = new PriorityQueue<>();
+      - heap.offer(item) - add item
+      - heap.poll() - remove item
+      - heap.size() - size of the heap
+      - heap.peek() - get head without removing it from the heap
+      - heap.contains(Object o) - check whether the heap contains the item
