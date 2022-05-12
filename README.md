@@ -155,3 +155,12 @@
       - heap.size() - size of the heap
       - heap.peek() - get head without removing it from the heap
       - heap.contains(Object o) - check whether the heap contains the item
+- Recursion: any function that calls on itself
+  - backtracking
+    - explore the problem space by processing partial solutions
+    - accept a solution if it is valid (meets requirements)
+    - eliminate the solution if it is invalid (does not meet requirements)
+  - memoization
+    - if the algorithm requires the result of previous recursions, or repeated calculation of the same values
+    - keep the previous results in memory to quickly re-access again later
+      - typically done with an array
