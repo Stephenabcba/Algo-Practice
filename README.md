@@ -164,3 +164,24 @@
     - if the algorithm requires the result of previous recursions, or repeated calculation of the same values
     - keep the previous results in memory to quickly re-access again later
       - typically done with an array
+
+- Graphs
+  - Breadth-First Search (BFS)
+    - Iterative solution (no recursion required)
+    - BFS explores a graph from a starting node
+    - Idea: search through nodes in the order that they are discovered
+      - keep a queue of nodes
+      - for each node in the queue, process all nodes that have an edge connected to the given node
+        - look for unprocessed nodes and add them to the queue
+    - Is able to find the shortest path in a UNWEIGHTED, UNDIRECTED graph
+      - if the graph meets these 2 requirements, the path from the previous node is the shortest path to the starting node
+      - The visited graph can hold the distance from the start or the previous node's location if needed.
+    - Required data storage:
+      - visited graph - same size as the actual graph
+        - if the graph is an n x n grid, the visited graph is also an n x n grid.
+        - could be holding values of boolean or distance from start
+      - queue - keep track of queues to manage
+        - could use array indexing for ease of managing the queue
+          - helps avoid O(N) dequeue runtime
+    - The target node is found is the current node in the iteration is the target node
+      - if the iteration ends (there's no more nodes in the queue), there's no path from start node to target node
