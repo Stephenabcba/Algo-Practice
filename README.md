@@ -185,3 +185,19 @@
           - helps avoid O(N) dequeue runtime
     - The target node is found is the current node in the iteration is the target node
       - if the iteration ends (there's no more nodes in the queue), there's no path from start node to target node
+
+- Dynamic Programming (with information from Geeks for Geeks)
+  - Can be considered if the following 2 conditions are met
+    1. Overlapping subproblems
+      - Sub problems depends on the solutions to other subproblems
+      - all DP problems must satisfy this condition
+    2. Optimal substructure
+       - subpaths are also optimal solutions
+       - a -> c can be broken up into a -> b + b -> c
+         - not all problems satisfy this condition
+       - Most DP problems satisfy this condition
+  - "Typically, all the problems that require maximizing or minimize certain quantities or counting problems that say to count the arrangements under certain conditions or certain probability problems can be solved by using Dynamic Programming."
+  - Solutions involve tabulating or memoizing the solution
+    - Tabulating: no recursion, build the solution bottom-up
+    - Memoizing: supporting memory structure to recursion, builds solution top down
+      - don't need to recurse if the answer is already memoized
