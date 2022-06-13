@@ -201,3 +201,6 @@
     - Tabulating: no recursion, build the solution bottom-up
     - Memoizing: supporting memory structure to recursion, builds solution top down
       - don't need to recurse if the answer is already memoized
+  - When building a DP structure, consider what actually needs to be saved
+    - ex: in a matrix problem, maybe only the previous row's dp information is important
+      - saving an array instead of the entire matrix reduces space usage from O(M*N) to O(N)
