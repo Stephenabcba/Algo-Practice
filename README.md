@@ -159,8 +159,9 @@
     - if a max heap is needed, it is possible to insert the negative of the values into the min heap
       - by using the negatives, the min heap will act like a max heap.
     ``` js
-    // min heap implementation by Ankita Masand on medium / bits and pieces
+        // min heap implementation by Ankita Masand on medium / bits and pieces
         // https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65
+        // Slightly modified because the remove function would not finish sinking a value if the node did not have 2 children.
         class MinHeap {
 
             constructor() {
@@ -215,11 +216,9 @@
                     let leftChildIndex = current * 2
                     let rightChildIndex = current * 2 + 1
 
-                    while (this.heap[leftChildIndex] &&
-                        this.heap[rightChildIndex] &&
-                        (this.heap[current] > this.heap[leftChildIndex] ||
-                            this.heap[current] > this.heap[rightChildIndex])) {
-                        if (this.heap[leftChildIndex] < this.heap[rightChildIndex]) {
+                    while (this.heap[leftChildIndex] && this.heap[current] > this.heap[leftChildIndex]
+                      || this.heap[rightChildIndex] && this.heap[current] > this.heap[rightChildIndex]) {
+                        if (this.heap[leftChildIndex] && this.heap[rightChildIndex] && this.heap[leftChildIndex] < this.heap[rightChildIndex] || !this.heap[rightChildIndex]) {
                             [this.heap[current], this.heap[leftChildIndex]] = [this.heap[leftChildIndex], this.heap[current]]
                             current = leftChildIndex
                         } else {
