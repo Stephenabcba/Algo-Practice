@@ -292,3 +292,17 @@
   - When building a DP structure, consider what actually needs to be saved
     - ex: in a matrix problem, maybe only the previous row's dp information is important
       - saving an array instead of the entire matrix reduces space usage from O(M*N) to O(N)
+
+- Sets / HashSets
+  - new HashSet<Integer>() in Java
+    - manually populate
+    - setName.add(num)
+    - setName.contains(num)
+  - set(arrayName) in Python
+    - num in setName
+  - new Set() in Javascript
+    - manually populate
+    - setName.add(num)
+    - setName.has(num)
+  - no duplicate values
+  - insert and lookup at O(1) runtime
