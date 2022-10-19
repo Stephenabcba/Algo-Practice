@@ -306,3 +306,27 @@
     - setName.has(num)
   - no duplicate values
   - insert and lookup at O(1) runtime
+
+
+- Python Specific: Writing a custom sort comparison function
+  - In JavsScript, this is simply passing in a callback function into the parameters
+  - In Python3, this is a little more complicated
+  1. Create the comparison function (just a regular function that returns an integer)
+     - Return -1 (or any negative number) if a comes before b
+     - Return 1 (or any positive number) if b comes before a
+  2. Use the `sorted()` function to sort the list
+     - Sorted takes 2 arguments, `oldList` and `key`, in addition to other parameters
+     - In regular `sorted` function call, `key` is a value of the element that Python uses to sort the list
+       - This is typically a numerical value from the item that can be sorted
+     - Here, the callback comparison function is passed into `functools.cmp_to_key()` before assigned to `key`
+       - The function is converted into a key format and Python3 can now process the sorting correctly.
+  ```py
+  def customCompare(a, b):
+      if a > b:
+        return 1
+      else:
+        return -1
+      # or return a - b
+
+  sortedList = sorted(oldList, key=functools.cmp_to_key(customCompare))
+  ```
