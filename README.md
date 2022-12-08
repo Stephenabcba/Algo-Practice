@@ -78,6 +78,10 @@
     - otherwise, it is a `stem`
   - The `height` of a binary tree is the number of nodes (inclusive) from the `root` to the furthest `leaf` node
   - A pointer (current) node can be used to traverse through the tree
+  - Traversal Methods: How the nodes are visited, which affects the order of nodes visited.
+    - Preorder: root, left,right
+    - Inorder: left, root, right
+    - Postorder: left, right, root
 - Binary Search Tree (BST)
   - Special variation of binary tree
     - all properties of binary tree apply to BST
