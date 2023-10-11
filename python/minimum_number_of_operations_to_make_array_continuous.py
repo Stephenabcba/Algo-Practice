@@ -121,7 +121,7 @@ class Solution:
 Solution by leetcode:
 Approach 2: Sliding Window
 Intuition
-In the previous approach, we locked in an element newNums[i] as left, calculated right, then found the insertion index of right as j. We used an O(log⁡n)O(\log{}n)O(logn) binary search to find j, but we can do better using a sliding window.
+In the previous approach, we locked in an element newNums[i] as left, calculated right, then found the insertion index of right as j. We used an O(logn) binary search to find j, but we can do better using a sliding window.
 
 Because newNums is sorted:
 
@@ -138,7 +138,7 @@ while (newNums[j] < newNums[i] + n)
 
 Once this condition is broken, newNums[j] is out of our range [left, right] and correctly positioned. We can calculate the number of elements already in our range as j - i just like in the previous approach.
 
-Because j starts at 0 and cannot exceed the length of newNums, it will only be incremented at most nnn times across the entire algorithm. This means it costs O(1)O(1)O(1) amortized to calculate j, an improvement from the O(log⁡n)O(\log{}n)O(logn) binary search.
+Because j starts at 0 and cannot exceed the length of newNums, it will only be incremented at most nnn times across the entire algorithm. This means it costs O(1) amortized to calculate j, an improvement from the O(logn) binary search.
 
 Algorithm
 Set n = nums.length and the answer ans = n.
