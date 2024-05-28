@@ -44,7 +44,7 @@ The sliding window approach can quickly find the substrings above
     - check if the length of the window is the longest seen so far
 - Return the longest window length at the end
 
-Runtime: O(N)
+Runtime: O(N) where N is the length of s (or t)
 Space: O(N)
 """
 
