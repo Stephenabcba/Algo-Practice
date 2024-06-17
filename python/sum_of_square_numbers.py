@@ -55,6 +55,12 @@ class Solution:
 """
 Solution by leetcode: Binary Search
 
+Using binary search, the value of b can be found from c - a ^ 2
+- the mid value in binary search is b, and it is squared when checking to fit the equation properly
+
+
+In testing, the binary search solution seems to take a much longer runtime
+
 Runtime: O(sqrt(c) * log c) where c is the input integer c
 Space: O(log c)
 """
